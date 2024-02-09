@@ -1,0 +1,36 @@
+{
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "res"
+    },
+    {
+      "type": "cosmosDB",
+      "direction": "in",
+      "name": "inputDocument",
+      "databaseName": "Visits",
+      "collectionName": "Counter",
+      "connectionStringSetting": "CosmosDBConnectionString"
+    },
+    {
+      "type": "cosmosDB",
+      "direction": "out",
+      "name": "outputDocument",
+      "databaseName": "Visits",
+      "collectionName": "Counter",
+      "createIfNotExists": "true",
+      "connectionStringSetting": "CosmosDBConnectionString"
+    }
+  ]
+}
